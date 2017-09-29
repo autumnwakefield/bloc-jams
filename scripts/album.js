@@ -100,7 +100,6 @@ var playButtonTemplate = '<a class="album-song-button"><span class="ion-play"></
                      this.children[0].innerHTML = this.children[0].getAttribute('data-song-number');
                    });
                };
-
      var albums = [albumPicasso, albumMarconi, albumCher];
      var index = 1;
     albumImage.addEventListener("click",function(event) {
