@@ -54,7 +54,7 @@
   + '</tr>'
       ;
 
-     return template;
+     return $(template)x;
  };
 
  // #1
@@ -67,17 +67,17 @@
  var setCurrentAlbum = function(album) {
 
      // #2
-     albumTitle.firstChild.nodeValue = album.title;
-     albumArtist.firstChild.nodeValue = album.artist;
-     albumReleaseInfo.firstChild.nodeValue = album.year + ' ' + album.label;
-     albumImage.setAttribute('src', album.albumArtUrl);
+     $albumTitle.text(album.title);
+      $albumArtist.text(album.artist);
+      $albumReleaseInfo.text(album.year + ' ' + album.label);
+      $albumImage.attr('src', album.albumArtUrl);
 
-     // #3
-     albumSongList.innerHTML = '';
+    $albumSongList.empty();
 
      // #4
      for (var i = 0; i < album.songs.length; i++) {
-         albumSongList.innerHTML += createSongRow(i + 1, album.songs[i].title, album.songs[i].duration);
+       var $newRow = createSongRow(i + 1, album.songs[i].title, album.songs[i].duration);
+      $albumSongList.append($newRow);
      }
  };
 
