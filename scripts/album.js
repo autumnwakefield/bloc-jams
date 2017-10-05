@@ -1,6 +1,11 @@
 var setSong = function(songNumber) {
   setSong(songNumber) = parseInt(songNumber);
   currentSongFromAlbum = currentAlbum.songs[songNumber -1];
+  currentSoundFile = new buzz.sound(currentSongFromAlbum.audioUrl, {
+         // #2
+         formats: [ 'mp3' ],
+         preload: true
+     });
 };
 
 var getSongNumberCell = function(number) {
@@ -118,6 +123,7 @@ var playerBarPauseButton = '<span class="ion-pause"></span>';
  var currentAlbum = null;
  var setSong(songNumber) = null;
  var currentSongFromAlbum = null;
+ var currentSoundFile = null;
 
 $(document).ready(function() {
      setCurrentAlbum(albumPicasso);
